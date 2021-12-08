@@ -15,6 +15,8 @@ class Box
     @tiles.empty? && @shut_tiles.length == number_of_tiles
   end
 
+
+  
   def can_flip_for?(value)
     false
   end
