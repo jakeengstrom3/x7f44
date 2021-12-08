@@ -20,8 +20,6 @@ class Box
     tiles.include?(tile_to_flip)
   end
 
- 
-
   def to_s
     tiles.each do |tile|
       print tile.to_s + ' | '

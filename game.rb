@@ -11,7 +11,7 @@ class Game
   end
 
   def over?
-    box.shut? || box.can_flip_for?(dice.map(&:value).reduce(:+))
+    box.shut? || box.can_flip_for?(dice.dice_list.map(&:value).reduce(:+))
   end
 
   def start!
@@ -19,7 +19,7 @@ class Game
   end
 
   def prepare_next_round
-    dice.each(&:roll!)
+    dice.roll
   end
 
   def play
@@ -27,9 +27,7 @@ class Game
     box.to_s
     print "\n"
     print "You rolled: "
-    dice.each do |die|
-      print "#{die.value} "
-    end
+    puts dice.to_s
     puts "\n"
     puts "Which tiles would you like to flip (separate by spaces): "
     tiles_to_flip = gets.chomp

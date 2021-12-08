@@ -1,15 +1,16 @@
 require_relative 'game'
   require_relative 'box'
   require_relative 'die'
+  require_relative 'dice'
 
 
 
 NUM_T = 9
-N_DICE = 2
-N_SIDES = 6
+n_dice = 2
+n_sides = 6
 
 
-dice= (1..N_DICE).map { |i| Die.new(N_SIDES) }
+dice= Dice.new(n_dice, n_sides)
 box= Box.new(NUM_T)
 
 game=Game.new(box, dice)
