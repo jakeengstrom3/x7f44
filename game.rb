@@ -11,7 +11,10 @@ class Game
   end
 
   def over?
-    box.shut? || box.can_flip_for?(dice.dice_list.map(&:value).reduce(:+))
+    if box.shut? then return true
+    dice_list.each do |die|
+      if box.can_flip_tile?(die.value) then return true
+    end
   end
 
   def start!

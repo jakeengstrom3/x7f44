@@ -16,7 +16,7 @@ class Box
     tiles.empty? && shut_tiles.length == number_of_tiles
   end
 
-  def can_flip_for?(tile_to_flip)
+  def can_flip_tile?(tile_to_flip)
     tiles.include?(tile_to_flip)
   end
 
