@@ -1,6 +1,7 @@
 class Box
 
-  attr_reader :shut_tiles, :number_of_tiles
+  attr_reader :shut_tiles, :number_of_tiles, :value
+
 
   def initialize(number_of_tiles)
     @number_of_tiles = number_of_tiles
@@ -15,10 +16,8 @@ class Box
     @tiles.empty? && @shut_tiles.length == number_of_tiles
   end
 
-
-  
-  def can_flip_for?(value)
-    false
+  def can_flip_for?(tile_to_flip)
+    @tiles.include?(tile_to_flip)
   end
 
   def getTiles
@@ -27,6 +26,10 @@ class Box
 
   def to_s
     "Box"
+  end
+
+  def flip_tiles(tiles_to_flip)
+
   end
 
 end
