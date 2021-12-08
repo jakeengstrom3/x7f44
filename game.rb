@@ -24,9 +24,7 @@ class Game
 
   def play
     print '| '
-    box.getTiles().each do |tile|
-      print tile.to_s + ' | '
-    end
+    box.to_s
     print "\n"
     print "You rolled: "
     dice.each do |die|
