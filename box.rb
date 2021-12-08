@@ -27,7 +27,11 @@ class Box
   end
 
   def flip_tiles(tiles_to_flip)
-
+    tiles_to_flip.each do |tile_to_flip|
+      if can_flip_for(tile_to_flip)
+        shut_tiles << tile_to_flip
+        tiles.delete(tile_to_flip)
+    end 
   end
 
 end
